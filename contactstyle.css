@@ -1,0 +1,192 @@
+/*CSS Code for headerandbanner.html and buttongroups.html*/
+
+/*All elemets that are inside of the body 
+will have this background color*/
+body{
+    background-color: #4B3FB3FF;
+}
+
+/*Menu bar properties*/
+.menubar{
+    /*Elements one beside to the other*/
+    display: inline-block;
+    /*Background color*/
+    background-color: rgb(60, 161, 161);
+    /*Command if you want to have rounded
+    borders*/
+    border-radius: 20px;
+  
+}
+/* Properties for icons */
+.lang_icons {
+  /*Element aligned to the center in vertical.
+  with that the elements will be centralized
+  and won't be fixed in the border*/
+    vertical-align: center;
+    /*Adjust width in pixels*/
+    width: 68px;
+    /*Adjust height in pixels*/ 
+    height: 56px;
+    /*Separation between elements to the left in 
+    pixels*/  
+    padding-left: 10px;
+    border-radius: 0px 0px 0px 0px; 
+  }
+  /*Properties for page title in header menu*/
+  .AlyDev {
+    vertical-align: center;
+    /*Edit the font type*/
+    font-family: Arial, Helvetica, sans-serif; /* Heading */
+    /*Letter size*/
+    font-size: 40px;
+    /*Letter height*/ 
+    line-height: 56px;
+    /*Letter bold or bolder*/ 
+    font-weight: 700; 
+    color: #F3F4F6FF; /* Font color in HEX */
+  }
+  .options{
+      justify-content: end;
+      padding-left: 50vw;
+  }
+  /* Header Menu 1 */
+.header-menu {
+    display: flex; 
+    align-items: center; 
+    font-family: Inter; /* Body */
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 400; 
+    opacity: 1; 
+  }
+  /* Header Menu 1 - Item */
+  .header-menu .header-menu-item {
+    padding: 18px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #F3F4F6FF; /* neutral-200 */
+    background: #000000FF; /* transparent */
+    border-radius: 0px; 
+    cursor: pointer; 
+    white-space: nowrap; 
+  }
+  /* Header Menu 1 - Selected item */
+  .header-menu .header-menu-item.selected {
+    position: relative; 
+    font-weight: 700; 
+    color: #CCD0F5FF; /* primary-150 */
+    background: #000000FF; /* transparent */
+  }
+  /* Header Menu 1 - Selected item */
+  .header-menu .header-menu-item.selected:hover:active {
+    color: #CCD0F5FF; /* primary-150 */
+    background: #000000FF; /* transparent */
+  }
+  /* Header Menu 1 - Item with indicator */
+  .header-menu .header-menu-item.selected .indicator {
+    position: absolute; 
+    bottom: 0px; 
+    width: 100%; 
+    height: 4px; 
+    background: #CCD0F5FF; /* primary-150 */
+    border-radius: 0px; 
+  }
+  /* Header menu item 1 */
+  .header-menu .header-menu-item:nth-child(1) {
+    font-family: Inter; 
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 700; 
+    color: #CCD0F5FF; /* primary-150 */
+  }
+  /* Header menu item 2 */
+  .header-menu .header-menu-item:nth-child(2) {
+    font-family: Inter; 
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 400; 
+    color: #F3F4F6FF; /* neutral-200 */
+  }
+  /* Header menu item 3 */
+  .header-menu .header-menu-item:nth-child(3) {
+    font-family: Inter; 
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 400; 
+    color: #F3F4F6FF; /* neutral-200 */
+  }
+  /*Properties for each element in the header
+  menu*/
+  .menusection{
+      /*Separation between elements to the left in 
+      pixels*/ 
+      display: inline-block;
+      /*Separation between elements to the left in 
+      pixels*/
+      padding-left: 32vw;
+  }
+  /*Properities for Header Logo*/
+ .logo{
+   /*Vertical alignment to adjust to the title*/
+    vertical-align: bottom;
+     display: inline-block;
+     width: 100px;
+     /*Height will be adjusted in proportion of the 
+     width*/
+     height: auto;
+ }
+ /*Properties for banner section that stores
+ search bar and title*/
+ .banner{
+   /*Instead to put as a background a color, you can 
+   put an image.*/
+     background-image: url(./sampleimages/istockphoto-841445186-612x612.jpg);
+     /*Put an established height of this banner of
+     50% of the viewport height*/
+     height: 50vh;
+ }
+ /*Properties for banner title*/
+ .Title { 
+  font-family: Arial, Helvetica, sans-serif; /* Heading */
+  font-size: 40px; 
+  line-height: 56px; 
+  font-weight: 700; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+/*Properties for div that will contain the buttons.
+This container will have a width of 50% of 
+Viewport width.*/
+.tasklist{
+  width: 50vw;
+}
+/* Image 3 */
+.image {
+  display: inline-block;
+  width: 71px; 
+  height: 65px; 
+  border-radius: 0px; 
+}
+/*Properties for buttons: will have the size in accordance
+to the parent container*/
+.buttons{
+  width: 50em;
+}
+/*Properties for Sign In text*/
+.signin{
+  display: inline-block; 
+  vertical-align: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+/*Properties for Don't forget title*/
+.dontforgettitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: white;
+  /*Property to remove the border from the start
+  of the text*/
+  margin-block-start: 0;
+}

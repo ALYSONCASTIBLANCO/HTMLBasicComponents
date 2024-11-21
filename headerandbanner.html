@@ -1,0 +1,74 @@
+<!--This is an example about how to create a head 
+menu and a simple banner using HTML and CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS styles sheet-->
+    <link rel="stylesheet" href="contactstyle.css"/>
+    <!--Tab name here-->
+    <title>Header and Banner sample</title>
+</head>
+<!--Here goes all page content in the body-->
+<body>
+    <!--Header for our head bar-->
+    <header>
+        <!--We've created a div or container that will
+        contain all menu elements with styles provided
+        by CSS.-->
+        <div class="menubar">
+            <!--First part, is the company logo with a name
+            besides.-->
+            <div class="menusection" style="padding-left: 0">
+                <img class="logo" alt="" src="./sampleimages/badge-_1_.png"/>
+                <!--For the h1, we've used inline-block to put elements
+                besides to the other.-->
+                <h1 class="AlyDev" style="display: inline-block;">Don't forget</h1>
+            </div>
+            <!--For this menu, we will create another container that will store 
+            the menu elements, we've used inline-block to put elements
+            besides to the other. Also, with padding, we've created the spaces
+            between elements.-->
+            <div class="menusection" style="padding-left: 10vw">
+                <!--ul to create the list, and li for each element.-->
+                <ul>
+                    <!--List items with images that have to be located in the same
+                    folder that is used in VS Code. Also, elements are located inline
+                block to put one beside to the other.-->
+                    <li style="display: inline-block;"><img class="lang_icons" alt="" src="./sampleimages/spain_icon.png"/></li>
+                    <li style="display: inline-block;"><img class="lang_icons" alt="" src="./sampleimages/uk_icon.png"/></li>
+                    <li style="display: inline-block;"><img class="lang_icons" alt="" src="./sampleimages/brazil_icon.png"/></li>
+                </ul>
+            </div>
+            <!--This is another container that will contain the sign in section:
+            with an image and the sign in logo. Also, we can see all CSS classes with
+        additional styles like inline-block and padding- left, to keep the elements one
+    beside to the other and separated.-->
+            <div class="menusection" style="padding-left: 30vw;">
+                <ul>
+                    <li class="signin">SIGN IN</li>
+                    <li style="display: inline-block;"><img class="lang_icons" style="padding-right: 2px;" alt="" src="./sampleimages/login-logo-icon-png-svg.png"/></li>
+                </ul>
+            </div>
+        </div>
+        <!--Header finishes here-->
+    </header>
+    <!--Main content starts here.-->
+    <main>
+        <!--We've created a container that stores the search bar, a title and all
+        elements centralized using the command text-align: center-->
+        <div class="banner" style="text-align:center">
+            <h1 class="dontforgettitle">Don't forget</h1>
+            <!--Search bar that says "Search"-->
+            <input placeholder="Search"/>
+            <!--Button to click to search-->
+            <input type="submit" value="Search"/>
+        </div>
+        <!--Main content ends here-->
+    </main>
+    <!--Body ends here-->
+</body>
+<!--HTML document ends here-->
+</html>

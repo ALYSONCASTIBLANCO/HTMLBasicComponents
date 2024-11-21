@@ -1,0 +1,50 @@
+<!--This is an example using HTML and CSS to do
+a simple login to get the information with customized
+colors-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS styles sheet-->
+    <link rel="stylesheet" href="./loginstyle.css"/>
+    <!--Tab name here-->
+    <title>Login</title>
+</head>
+<!--Here goes all page content in the body-->
+<body>
+    <!--Here starts the page main content-->
+    <main>
+        <!--We've created a container that will contain the form, 
+        we will customize the color of this containes, the rounded
+    corners and the location with the class logincontainer-->
+        <div class="logincontainer">
+            <!--Our title in our login-->
+            <h1>Login to your site</h1>
+            <!--This is the form. In the tag action, we will open another window
+            once that we access to the login clicking in the button. and with method,
+        here we choose "get" because only we want to get the data. If 
+    you want to do a real login, has to be under the method "post"-->
+            <form action="headerandbanner.html" method="get">
+                <!--User label to identify the textbox for the user-->
+                <label for="user"><h5>User: </h5></label>
+                <!--Textbox to type the user-->
+                <input id="user" class="textboxes" type="text" name="user" placeholder="Type your user"/>
+                <!--User label to identify the textbox for the password-->
+                <label for="password"><h5>Password: </h5></label>
+                <!--Textbox to type the password-->
+                <input id="password" class="textboxes" type="password" name="password" placeholder="Type your password"/>
+                <!--Breakline tag-->
+                <br>
+                <br>
+                <!--Input to identify the button to press once the form is completed-->
+                <input class="button" type="submit" value="Login"/>
+            </form>
+        </div> 
+    <!--Main content ends here.-->   
+    </main>
+<!--Body ends here-->
+</body>
+<!--HTML document ends here-->
+</html>
