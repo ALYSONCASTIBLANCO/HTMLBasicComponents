@@ -1,0 +1,64 @@
+<!--This is an example about how to create a card for a 
+product or an element.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS styles sheet-->
+    <link rel="stylesheet" href="./card.css" />
+    <!--Tab name here-->
+    <title>Product card sample</title>
+</head>
+<!--Here goes all page content in the body-->
+<body>
+    <!--Main content starts here.-->
+    <main>
+        <!--First, we will create a big container that will
+        contain all cards. The CSS style is identified 
+    with the class greatcontainer-->
+        <div class="greatcontainer">
+            <!--For each card, we will create a div with
+            the CSS properties in class cardcontainer.-->
+            <div class="cardcontainer">
+                <!--We will attach an image that will be the product reference
+                with the CSS properties from class productimage.-->
+                <img class="productimage" src="./sampleimages/product.png" alt="product">
+                <!--Here we've created a div to contail the product name, description and
+                button. We did that because we want to put color only to that section. For that
+            reason, is contained in a div.-->
+                <div class="detailsection">
+                    <h3>Product name</h3>
+                    <p>Description</p>
+                    <!--Button with CSS properties from class detailsbutton to put a margin
+                    in the bottom to leave a space between the button and the border.-->
+                    <button class="detailsbutton">Watch details</button>
+                </div>
+            </div>
+            <!--Same principles for the other cards-->
+            <div class="cardcontainer">
+                <iframe width="100%" height="66%" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1895086527&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <div
+                    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/estoicayfuerte"
+                        title="Estoica y Fuerte: Estoicismo por y para mujeres" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">Estoica y Fuerte: Estoicismo por y para
+                        mujeres</a> · <a href="https://soundcloud.com/estoicayfuerte/chapter1"
+                        title="Estoicismo y estilo de vida: Como el estoicismo puede ayudar desde la experiencia."
+                        target="_blank" style="color: #cccccc; text-decoration: none;">Estoicismo y estilo de vida: Como
+                        el estoicismo puede ayudar desde la experiencia.</a></div>
+                <div class="detailsection">
+                    <h3>Chapter 1</h3>
+                    <p>Description</p>
+                    <button class="detailsbutton">Watch details</button>
+                </div>
+            </div>
+        </div>
+    <!--Main content ends here-->
+    </main>
+<!--Body ends here-->
+</body>
+<!--HTML document ends here-->
+</html>
