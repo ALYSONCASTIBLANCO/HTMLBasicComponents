@@ -1,0 +1,68 @@
+<!--This is a template to generate a responsive navbar with distribution of two 
+coluumns  in content wIth background using bootstrap.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Bootstrap styles CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <!--CSS styles sheet-->
+    <link rel="stylesheet" href="./headerbootstrap.css" />
+    <!--Tab name here-->
+    <title>Navbar with Bootstrap</title>
+</head>
+<!--Here goes all page content in the body-->
+<body>
+    <!--In this div we will put all page elements. Is container-fluid to extend all
+    content to the 100% of the viewport width.-->
+    <div class="container-fluid">
+        <!--The first row, will be for the navbar, with green background.-->
+        <div class="row" style="background-color: green;">
+            <!--The row will be divided in three parts (for that reason, all columns have
+                a value of 4, the total of the row has to be 12). All the sections 
+                will align all elements to the center.-->
+                <div class="col-4 align-content-center">
+                    <!--Image edited with the class logo in CSS for the size and
+                    location.-->
+                    <img class="logo" alt="" src="./sampleimages/badge-_1_.png"/>
+                    <!--Page title with CSS format through class title.-->
+                    <h1 class="title">AMR Escritoras</h1>
+                </div>
+                <!--The next column will contain a short menu using a list, with different elements 
+                edited with the CSS class menuitems.-->
+                <div class="col-4 align-content-center">
+                    <ul>
+                        <li class="menuitems">Home</li>
+                        <li class="menuitems">Sobre nosotros</li>
+                    </ul>
+                </div>
+                <!--In this column, we have a search bar with an input in text box and a button
+                done with an input type submit-->
+                <div class="col-4 align-content-center">
+                    <input type="text" placeholder="Buscar"/>
+                    <input type="submit" value="Buscar"/>
+                </div>
+        </div>
+        <!--Here goes the content-->
+        <!--This is the div that will contain the content in two columns: all the elements are
+        aligned between them to do the two columns. also, we've attached an image using the
+    command background-image. -->
+        <div style="background-image: url(./sampleimages/white-background-with-a-hint-of-blue-abstract-photo.jpg)" class="row justify-content-between">
+            <div class="col">
+                <h1>Quienes somos</h1>
+            </div>
+            <div class="col">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nemo, maiores dicta amet facilis
+                    omnis obcaecati recusandae minima nam, corrupti asperiores quasi molestiae accusantium delectus.
+                    Eum, sunt. Ex, libero suscipit!</p>
+            </div>
+        </div>
+    </div>
+    <!--Body ends here-->
+</body>
+<!--HTML document ends here-->
+</html>

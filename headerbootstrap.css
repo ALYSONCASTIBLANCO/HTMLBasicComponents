@@ -1,0 +1,28 @@
+/*This is the CSS for the file Headerandsectionsbootstrap.html*/
+/*This is the selector for the title. Will 
+have color and will be displayed beside to the
+other elements with inline-block*/
+.title{
+    color: azure;
+    display: inline-block;
+}
+/*Logo with a specific width and a height auto
+to keep the proportion. Also, a margin to keep separated
+the element of the border and inline-block to put
+the element beside to the other.*/
+.logo{
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+    display: inline-block;
+}
+/*The menu items will have this selector to display
+the elements one beside to the other, a separation between them
+of 10% of the width of the parent container, a specific font color
+and an italic style.*/
+.menuitems{
+    display: inline-block;
+    padding-right: 10%;
+    color: azure;
+    font-style: italic;
+}
