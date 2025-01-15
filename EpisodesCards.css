@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.EpisodesTitle{
+    color: #F05941FF;
+}
+.Cards{
+    /*Will have a width of 98% of viewport width.*/
+    width: 98vw;
+    /*Will be displayed as flex to centralize better
+    the elements with the command justify content*/
+    display: flex;
+}
+/*Properties for the Card*/
+.cardcontainer{
+    /*Background color for our card*/
+    background-color: white;
+    /*We will align all elements to the center*/
+    text-align: center;
+    /*Width will be the 20% of Viewport width*/
+    width: 20vw;
+    /*Height will be adapted in accordance to the width.*/
+    height: auto;
+    /*We will put an external border of 1px, solid line with this color*/
+    border: 1px white solid;
+    /*We establish a margin to the left of 1% of the parent container to
+    separate the cards*/
+    margin-left: 1%;
+    /*Border radius instruction to do the corners smoother*/
+    border-radius: 2%;
+}
+/*Properties for the image*/ 
+.productimage{
+    /*Will have a width of 100% of the parent container
+    width (cardcontainer is the parent.)*/
+    width: 100%;
+    /*Will have a height of 70% of the parent container
+    height (cardcontainer is the parent.)*/
+    height: 70%;
+}
+/*Properties for the button*/
+.detailsbutton{
+    /*Will have a margin in the bottom of 10% of the parent container
+    height (cardcontainer is the parent.)*/
+    margin-bottom: 10%;
+    color: #FFFFFFFF; /* white */
+    font-weight: bold;
+    background: #22092CFF; /* primary-500 */
+    border-radius: 5%; /* border-m */
+    padding: 2% 5%; 
+}
+
