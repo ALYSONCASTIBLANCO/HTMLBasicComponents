@@ -1,0 +1,40 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container-scroll{
+    display: flex;
+    height: 500px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    overscroll-behavior-x: smooth;
+    scroll-snap-type: x proximity;
+    gap: 15px;
+}
+
+.container-scroll div{
+    position: relative;
+    scroll-snap-align: center;
+    margin: 0 15px 0 0;
+    height: 100%;
+}
+.container-scroll div img{
+    height: 100%;
+}
+.container-scroll div div{
+    width: 100%;
+    height: 30%;
+    background-color:#F2F8F6;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container-scroll div div h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container-scroll div div a, .container-scroll div div a:active, .container-scroll div div a:visited {
+    text-decoration: none;
+    color: #C32D53;
+}

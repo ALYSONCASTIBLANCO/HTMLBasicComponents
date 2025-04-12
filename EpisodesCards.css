@@ -51,3 +51,24 @@ body{
     padding: 2% 5%; 
 }
 
+/*Media queries are statements that will apply specific conditions
+when we have a specific viewport size. In this case, we are applying
+these parameters when the viewport width is lower than 600px, 
+perfect for tablets and phones.*/
+@media (max-width: 600px){
+    .Cards{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .cardcontainer{
+        background-color: white;
+        text-align: center;
+        width: 80vw;
+        height: auto;
+        border: 1px white solid;
+        margin-left: 1%;
+        border-radius: 2%;
+    }
+}
+
