@@ -1,0 +1,87 @@
+/*CSS Code for Menuandgallery.html*/
+
+/*All elemets that are inside of the body 
+will have this background color*/
+body{
+    background-color: #4B3FB3FF;
+}
+
+/*Menu bar properties*/
+.menubar{
+    width: 100%;
+    /*Elements one beside to the other*/
+    display: flex;
+    justify-content: space-between;
+    /*Background color*/
+    background-color: rgb(60, 161, 161);
+    /*Command if you want to have rounded
+    borders*/
+    border-radius: 20px;
+  
+}
+/* Properties for icons */
+.icons {
+  /*Element aligned to the center in vertical.
+  with that the elements will be centralized
+  and won't be fixed in the border*/
+    vertical-align: center;
+    /*Adjust width in pixels*/
+    width: 68px;
+    /*Adjust height in pixels*/ 
+    height: 56px;
+    /*Separation between elements to the left in 
+    pixels*/  
+    padding-left: 10px;
+    border-radius: 0px 0px 0px 0px; 
+  }
+  /*Properties for page title in header menu*/
+  .AlyDev {
+    vertical-align: center;
+    /*Edit the font type*/
+    font-family: Arial, Helvetica, sans-serif; /* Heading */
+    /*Letter size*/
+    font-size: 40px;
+    /*Letter height*/ 
+    line-height: 56px;
+    /*Letter bold or bolder*/ 
+    font-weight: 700; 
+    color: #F3F4F6FF; /* Font color in HEX */
+  }
+  .options{
+      justify-content: end;
+      padding-left: 50vw;
+  }
+  /*Properities for Header Logo*/
+ .logo{
+   /*Vertical alignment to adjust to the title*/
+    vertical-align: bottom;
+     display: inline-block;
+     width: 100px;
+     /*Height will be adjusted in proportion of the 
+     width*/
+     height: auto;
+ }
+ /*Adjusting login icon*/
+ .menusection{
+     display: flex;
+     align-items: center;
+ }
+ /*This is the format for the div that is inside of the main, basically the 
+ photos grid*/
+ main div{
+     /*To do a little bit of border.*/
+     margin-top: 10px;
+     /*Do a grid of elements*/
+     display: grid;
+     /*Grid will be organized with 4 elements per row*/
+     grid-template-columns: repeat(4, 1fr);
+     /*A separation between elements of 10px.*/
+     gap: 10px;
+ }
+ /*The images of the gallery will have the following format*/
+ main div img{
+     /*width of 100% of the parent container*/
+     width: 100%;
+     /*height of 100% of the parent container*/
+     height: 100%;
+ }
