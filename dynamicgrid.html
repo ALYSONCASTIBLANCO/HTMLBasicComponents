@@ -1,0 +1,330 @@
+<!--This is a short project to insert a dynamic grid with animation effects in CSS. 
+CSS will be injected directly in the HTML because will be a shortcode in WordPress.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(137deg, rgba(2, 0, 36, 1) 0%, rgba(212, 57, 57, 1) 35%, rgba(156, 40, 36, 1) 100%);
+            ;
+        }
+
+        .programs {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            gap: 10px;
+        }
+
+        .program {
+            width: 80%;
+            background-color: #9C2727;
+            padding: 20px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            box-shadow:
+            /*Box shadow funciona con cuatro valores: offset x, offset y, disfumino y color.
+            Se hace por cada capa que se superpone y genera ese efecto neon.*/ 
+            0 0 5px #F5C0AE,
+            0 0 10px #F5C0AE,
+            0 0 20px #F5C0AE,
+            0 0 40px #F5C0AE;
+        }
+        .program img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .program:hover{
+            transform: scale(1.05);
+        }
+        .modal-content{
+        background: linear-gradient(137deg, rgba(2, 0, 36, 1) 0%, rgba(212, 57, 57, 1) 35%, rgba(194, 70, 70, 1) 100%) !important;
+        }
+        .modal-header{
+            border-bottom: none !important;
+        }
+        .modal-body{
+            text-align: center;
+        }
+        .modal-body div{
+             width: 100%;
+        }
+        .modal-body div img{
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 20px;
+        }
+        .modal-body div p{
+            color: white !important;
+        }
+        button.btn.btn-secondary{
+            background: linear-gradient(137deg,rgba(2, 0, 36, 1) 0%, rgba(171, 79, 79, 1) 44%, rgba(183, 74, 74, 1) 81%, rgba(194, 70, 70, 1) 100%) !important;
+        }
+        @media(max-width: 992px){
+            .programs{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="programs">
+        <div class="program">
+            <img src="https://jinndo.co/wp-content/uploads/2025/06/salserisimo.jpg" alt="salserisimo"
+            class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalSalserisimo" style="cursor: pointer;">
+        </div>
+        <div class="program">
+            <img src="https://jinndo.co/wp-content/uploads/2025/06/popunatos.jpg" alt="Popunatos"
+            class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalPopunato" style="cursor: pointer;">
+        </div>
+        <div class="program">
+            <img src="https://jinndo.co/wp-content/uploads/2025/06/cuchotk.jpg" alt="Cuchotk"
+            class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalCuchotk" style="cursor: pointer;">
+        </div>
+        <div class="program">
+            <img src="https://jinndo.co/wp-content/uploads/2025/06/de_al_lado.jpg" alt="PuertaAlLado"
+            class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalPuerta" style="cursor: pointer;">
+        </div>
+        <div class="program">
+            <img src="https://jinndo.co/wp-content/uploads/2025/06/retros_forever.jpg" alt="retros"
+            class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalRetro" style="cursor: pointer;">
+        </div>
+    </div>
+        <!-- Modal 1-->
+        <div class="modal fade" id="modalSalserisimo" tabindex="-1" aria-labelledby="modalSalserisimoLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="modalSalserisimoLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Volver"></button>
+            </div>
+            <div class="modal-body">
+                <div><img src="https://jinndo.co/wp-content/uploads/2025/06/salserisimo.jpg"></div>
+                    <div>
+                        <p></b>🎷🔥 SALSERÍSIMO – ¡Siente el ritmo, vive la salsa! 🔥🎷</b>
+                            <br>
+                           <b>Conduce: Uriel García</b>
+                            <br>
+                            <br>
+                            <i>Sumérgete en un viaje sonoro por los ritmos más sabrosos de la salsa clásica, la salsa dura, romántica y
+                            la nueva generación de salseros.</i>
+                            <br>
+                            <i>🎶 Desde los barrios de Cali hasta las calles de Nueva York, "Salserísimo" te trae lo mejor del género
+                            que ha puesto a bailar al mundo entero.
+                            Anécdotas, historia, artistas legendarios y joyas musicales que no puedes perderte.</i>
+                            <br>
+                            <br>
+                            <b>📻 Sábados de 3:00 p.m. a 4:00 p.m.</b>
+                            <br>
+                            <br>
+                            <i>Conéctate, sube el volumen y déjate llevar por el tumbao.</i>
+                            <br>
+                            <i>👉 Solo por Jinndo Radio</i>
+                            <i>¡Porque la salsa no se escucha, se vive! 💃🕺</i>
+                            <br>
+                            <br>
+                            <b>#Salserísimo #SalsaConEstilo #UrielGarcía #RadioConSabor #SalsaEsCultura #SalsaEnLaRadio #JinndoRadio</p></b>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="modal fade" id="modalPopunato" tabindex="-1" aria-labelledby="modalPopunatoLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="modalPopunatoLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Volver"></button>
+            </div>
+            <div class="modal-body">
+                <div><img src="https://jinndo.co/wp-content/uploads/2025/06/popunatos.jpg"></div>
+                    <div>
+                        <p><b>🎶🔥 POPUNATOS – 🎙 ¡Prepárate para sentir la música que nace del alma!</b>
+                            <br>
+                            <b>📻 "Entre Acordeones y Despechos" – El corazón del pueblo en la radio</b>
+                            <br>
+                            <b>🎶 Vallenato con raíz, Popular con dolor… y sentimiento que no se esconde.</b>
+                            <br>
+                            <br>
+                            <b>Conduce: Uriel García</b>
+                            <br>
+                            <br>
+                            <i>Aquí no venimos a disimular emociones…</i>
+                            <br>
+                            <i>👉 Venimos a cantarlas, a gritarlas, a vivirlas.</i>
+                            <br>
+                            <i>Desde los clásicos de Diomedes, Jorge Oñate y el Binomio de Oro, hasta el dolor hecho canción de Darío
+                            Gómez, Arelys Henao y Jessi Uribe.</i>
+                            <br>
+                            <i>💔 Si te han roto el alma, esta música la reconstruye con cada nota.</i>
+                            <br>
+                            <i>🎤 Historias que suenan como las tuyas. Canciones que dicen lo que tú no te atreves.</i>
+                            <br>
+                            <br>
+                            <b>🕰 Todos los Sabados de 4pm a 5 pm</b>
+                            <br>
+                            <i>👉 Solo por Jinndo Radio</i>
+                            <i>Porque aquí no ponemos canciones...</i>
+                            <br>
+                            <i>🔥 ¡Aquí te ponemos a sentir! 🔥</i>
+                            <br>
+                            <br>
+                            <b>#VallenatoDelBueno #MúsicaPopular #EntreAcordeonesYDespechos #SentimientoEnLaRadio
+                            #DespechoTotal #JinndoRadio</b>
+                        </p>
+                    </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="modal fade" id="modalCuchotk" tabindex="-1" aria-labelledby="modalCuchotkLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="modalCuchotkLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Volver"></button>
+            </div>
+            <div class="modal-body">
+                <div><img src="https://jinndo.co/wp-content/uploads/2025/06/cuchotk.jpg" alt="Cuchotk"></div>
+                    <div>
+                        <p><b>💥 ¡La Cuchotk! 💥</b>
+                            <br>
+                            <br>
+                            <b>Conduce: Uriel García</b>
+                            <br>
+                            <br>
+                            <i>Conducido por el inigualable Uriel García, el DJ del sabor, que te lleva directo al corazón de la fiesta
+                            con los clásicos bailables que nunca pasan de moda.</i>
+                            <br>
+                            <i>🕺 Pastor López, La Billos, Los Graduados, Los Hispanos, Afrosound y más...
+                            ¡Una descarga de cumbia, salsa, merengue y música tropical que no deja quieto ni al más tímido!</i>
+                            <br>
+                            <br>
+                            <b>📻 Sintonízanos todos los domingos de 3 a 4 de la tarde</b>
+                            <br>
+                            <i>y deja que la buena música hable por ti…</i>
+                            <br>
+                            <br>
+                            <i>👉 ¡Solo por Jinndo Radio, donde vive el ritmo de tu corazón!</i>
+                            <br>
+                            <i>🎶 "La Cuchotk"... porque el sabor es eterno. 🎶</i>
+                            <br>
+                            <br>
+                            <b>#Salserísimo #SalsaConEstilo #UrielGarcía #RadioConSabor #SalsaEsCultura #SalsaEnLaRadio #JinndoRadio</b>
+                        </p>
+                    </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="modal fade" id="modalPuerta" tabindex="-1" aria-labelledby="modalPuertaLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="modalPuertaLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Volver"></button>
+            </div>
+            <div class="modal-body">
+                <div><img src="https://jinndo.co/wp-content/uploads/2025/06/de_al_lado.jpg" alt="Puerta de al lado"></div>
+                    <div>
+                        <p><b>🎸 ¡Abre La Puerta de al Lado! 🎙- El rock no está muerto... ¡está más vivo que nunca!</b>
+                            <br>
+                            <br>
+                            <b>Conduce: Diego Mait</b>
+                            <br>
+                            <br>
+                            <i>Acompaña a Diego Mait en este viaje sonoro donde solo el rock manda. Clásicos, rarezas, riffs
+                            inolvidables y toda la actitud que solo este género puede dar.</i>
+                            <br>
+                            <i>🎶 Desde los barrios de Cali hasta las calles de Nueva York, "Salserísimo" te trae lo mejor del género
+                            que ha puesto a bailar al mundo entero.</i>
+                            <i>Anécdotas, historia, artistas legendarios y joyas musicales que no puedes perderte.</i>
+                            <br>
+                            <br>
+                            <b>🕰 Sabados de 9am a 10 am : no toques ese dial… ¡la puerta ya está entreabierta!</b>
+                            <br>
+                            <br>
+                            <i>👉 Solo por Jinndo Radio</i>
+                            <br>
+                            <i>📻 "La Puerta de al Lado" – Tu nuevo refugio de rock</i></p>
+                    </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Modal 5-->
+        <div class="modal fade" id="modalRetro" tabindex="-1" aria-labelledby="modalRetroLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="modalRetroLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Volver"></button>
+            </div>
+            <div class="modal-body">
+                <div><img src="https://jinndo.co/wp-content/uploads/2025/06/retros_forever.jpg" alt="retros"></div>
+                    <div>
+                        <p><b>🕹🎶 RETROS FOREVER – ¡Vuelve lo mejor de los 80!</b>
+                            <br>
+                            <br>
+                            <b>Conduce: Lucas Martín Mazzaroni</b>
+                            <br>
+                            <br>
+                            <i>Sintoniza el ritmo del pasado con el estilo del presente.</i>
+                            <br>
+                            <i>🎧 Funk, pop, synthwave, baladas y mucho más...
+                            Todo lo que hizo grande a una década inolvidable.</i>
+                            <br>
+                            <br>
+                            <b>📻 Sábados de 10 a.m. a 12 m</b>
+                            <br>
+                            <br>
+                            <i>👉 Solo por Jinndo Radio</i>
+                            <br>
+                            <i>Porque lo retro nunca muere.</i></p>
+                     </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    <!-- Bootstrap JS Bundle (com Popper incluso) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
