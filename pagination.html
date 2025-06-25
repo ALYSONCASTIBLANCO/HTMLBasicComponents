@@ -1,0 +1,214 @@
+<!--This is an example about how to do a news pagination. All elements are included in the same file
+because will be used for a WordPress shortcode.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        .cards{
+            width: 100%;
+            display: grid;
+            column-gap: 20px;
+            row-gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .card {
+          background: #f5f5f5;
+          border-radius: 20px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          min-height: 300px; /* Altura fija */
+        
+        }
+          .card img {
+          width: 100%;
+          height: 70%; /* Ajusta esto como prefieras */
+          object-fit: cover;
+          display: block;
+          }
+        .card h2 {
+          flex: 1;
+          background-color: #7A1B2B;
+          font-size: 14px;
+          margin: 0;
+          padding: 8px;
+          text-align: center;
+          color: white;
+        }
+        
+        .card a {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          }
+        .pagination{
+            display: flex;
+            justify-content: center;
+        }
+        @keyframes Pulse {
+            0%, 100% {
+            transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pagination button{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #C32D53;
+            color: #F2F8F6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            box-shadow: 
+            0 0 5px #C04056,
+            0 0 10px #C04056,
+            0 0 20px #C04056,
+            0 0 40px #C04056;
+            animation: Pulse 1s infinite;
+        }
+        @media (max-width: 600px){
+            .cards{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .card{
+            text-align: center;
+            width: 90vw;
+            border-radius: 20px;
+            min-height: 150px;
+        
+        }}	  
+    </style>        
+</head>
+<body>
+    <!--Section that will contain the news and the buttons with the pagination.-->
+    <section>
+        <div class="cards" id="articles"></div>
+        <div class="pagination">
+            <button id="previous">👈 Anteriores</button>
+            <span id="page-info"></span>
+            <button id="next">👉 Recientes</button>  
+        </div>  
+    </section>
+    <!--The template that will be cloned to store each notice.-->
+    <template id="article-template">
+        <article class="card">
+            <img id="notice-image" src="" alt="image">
+            <h2 id="notice-title"></h2>
+        </article>
+    </template>
+    <script>
+        // Your API URL
+        const apiUrl = 'https://newsdata.io/api/1/latest?apikey=pub_125f535e9f204ee18348c3cc1cb62d4c&q=technology';
+        //Notices will store the news array from the API.
+        var notices=[];
+        //This is a variable that will get the element with the id articles, and modify in the
+        //DOM.
+        const newsListDOM=document.querySelector("#articles");
+        //This is a variable that will get the element with the id previous, and modify in the
+        //DOM.
+        const backButton=document.querySelector("#previous");
+        //This is a variable that will get the element with the id next, and modify in the
+        //DOM.
+        const upButton=document.querySelector("#next");
+        //This is a variable that will get the element with the id page-info, and modify in the
+        //DOM.
+        const PageInfo=document.querySelector("#page-info");
+        //This is a variable that will get the element with the id article-template, and modify in the
+        //DOM.
+        const newsTemplate=document.querySelector("#article-template").content.firstElementChild;
+        //This is the variable that will manage the amount of articles per page.
+        const elementsPerPage=5;
+        let currentPage=1;
+        // Fetch the news data. Remember that the async/await function, is the most modern method
+        //to work with promises or tasks that will take time.
+        //Basically the async function, will execute a task under a promise that will be,
+        //in this case, we will get data from an API.
+        //and the await will ensure that the program will continue when the promise is done
+        //(when we get the data from the API).
+       async function loadNotices(){
+           try {
+            const response=await fetch(apiUrl);
+            const data=await response.json();
+            notices=data.results;
+            //Here, we ensure that when I click the button, I can execute the function to go to the previous page.
+            backButton.addEventListener("click", previousPage);
+            //Here, we ensure that when I click the button, I can execute the function to go to the next page.
+	        upButton.addEventListener("click", nextPage);
+            //We will render the results in real time.
+            render();               
+           } catch (error) {
+            console.error("Error loading notices:", error);
+           }
+       }
+       loadNotices();
+       function nextPage(){
+           //We will update the currentPage variable increasing in 1 (next page).
+           currentPage=currentPage+1;
+           //Render again with the updated values.
+           render();
+       }
+       function previousPage(){
+           //We will update the currentPage variable decreasing in 1 (previous page).
+           currentPage=currentPage-1;
+           //Render again with the updated values.
+           render();
+       }
+       function getDataSlice(page=1){
+           //Here we are doing the start interval for the slicing. We are getting here from where have to start the interval.
+           const start=(currentPage-1)*elementsPerPage;
+           //Here is calculating the total interval of the slicing as end.
+           const end=start+elementsPerPage;
+           //Here finally we return the notices sliced.
+           return notices.slice(start, end);
+       }
+       function getTotalPages(){
+           return Math.ceil(notices.length/elementsPerPage);
+       }
+       function buttonsManage(){
+           if(currentPage===1){
+               backButton.setAttribute("disabled", true);
+           }
+           else{
+            backButton.removeAttribute("disabled"); 
+           }
+           if(currentPage===getTotalPages()){
+               upButton.setAttribute("disabled", true);
+           }
+           else{
+            upButton.removeAttribute("disabled"); 
+           }
+       }       
+       //Render will show the news in the page.
+        function render(){
+            //We are getting the div that contains all news and we will clean.
+            newsListDOM.innerHTML="";
+            const dataSlice=getDataSlice(currentPage);
+            buttonsManage();
+            PageInfo.textContent= `${currentPage}/${getTotalPages()}`;
+            //Here, we will take each element of the notices array and we will 
+            //show in the div using forEach command.
+            dataSlice.forEach(function(notice){
+                //We will clone the element article as much times as we need.
+                const newnotice=newsTemplate.cloneNode(true);
+                //We will get the h2 that contains the notice title and we will modify it.
+                const newimg=newnotice.querySelector("#notice-image");
+                newimg.setAttribute("src", notice.image_url);
+                //We will get the h2 that contains the notice title and we will modify it.
+                const newtitle=newnotice.querySelector("#notice-title");
+                newtitle.textContent=notice.title;
+                //We will put the new notice in the div that contains the news.
+                newsListDOM.appendChild(newnotice);
+            }); 
+
+        }
+    </script>
+</body>
+</html>

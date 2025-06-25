@@ -1,0 +1,43 @@
+<!--This is a short project to insert a dynamic button with animation effects in CSS. 
+CSS will be injected directly in the HTML because will be a shortcode in WordPress.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Button</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        @keyframes Pulse {
+            0%, 100% {
+            transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+}
+
+        button{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #C32D53;
+            color: #F2F8F6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            box-shadow: 
+            0 0 5px #C04056,
+            0 0 10px #C04056,
+            0 0 20px #C04056,
+            0 0 40px #C04056;
+            animation: Pulse 1s infinite;
+        }
+        
+    </style>
+</head>
+<body>
+    <button>Nuestra programación completa aquí</button>
+</body>
+</html>
