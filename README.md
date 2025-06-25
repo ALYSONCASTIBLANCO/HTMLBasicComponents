@@ -38,11 +38,7 @@ The repository is organized into standalone examples. Each component typically h
 
 ## 📷 Screenshots
 
-<img src="https://user-images.githubusercontent.com/ALYSONCASTIBLANCO/HTMLBasicComponents/assets/hero-section.png" width="700" alt="Hero Banner Section Example">
-
-<img src="https://user-images.githubusercontent.com/ALYSONCASTIBLANCO/HTMLBasicComponents/assets/cards-grid.png" width="700" alt="Dynamic Card Grid with Pagination">
-
-<img src="https://user-images.githubusercontent.com/ALYSONCASTIBLANCO/HTMLBasicComponents/assets/login-form.png" width="700" alt="Login Form Example">
+Coming soon...
 
 ---
 
